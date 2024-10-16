@@ -1,0 +1,7 @@
+/*remove border around the screen and set font for the page*/
+* {
+  box-sizing: border-box;
+  background-color: rgb(116, 6, 6);
+  font-family: verdana;
+  color: white;
+}
