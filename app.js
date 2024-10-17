@@ -1,41 +1,33 @@
-//DOM Nodes - this part does jfkldsjfdklsajfdsl
+//DOM Nodes
 const cookieBtn = document.getElementById("cookie-btn");
 const cookieDisplay = document.getElementById("cookie-display");
 const cpsDisplay = document.getElementById("cps-display");
 const grandmaBtn = document.getElementById("grandma-btn");
-const grandmaDisplay = document.getElementById("grandma-display");
 
-//Game State - this part drives the game
-//let cookies = 0;
-//TODO put in LS and transform into number
+//Game State
 let cookies = localStorage.getItem("cookies") || 0;
 cookies = Number(cookies);
-//localStorage.setItem("cookie-display", cookies);
-
-//let cps = 0;
-//TODO put in LS and transform into number
 let cps = localStorage.getItem("cps") || 0;
 cps = Number(cps);
-//localStorage.setItem("cps-display", cps);
-
-//TODO put in LS and transform into number
-let grandmas = localStorage.getItem("grandmas") || 0;
-grandmas = Number(grandmas);
-cookieDisplay.textContent = cookieDisplay;
+// Update page
+cookieDisplay.textContent = cookies;
+cpsDisplay.textContent = cps;
 
 //GAME LOGIC
-//every sec inc cookies by 1sec
+//every sec inc cookies by CPS
 setInterval(function () {
   cookies = cookies + cps;
   cookieDisplay.textContent = cookies;
-  //TODO put in LS
-  localStorage.setItem("cookie-display", cookieDisplay);
+  //localStorage.setItem("cookie-display", cookieDisplay);
+  localStorage.setItem("cookies", cookies);
 }, 1000);
 
 //get a cookie when user clicks the button
 cookieBtn.addEventListener("click", function () {
   cookies = cookies + 1;
   cookieDisplay.textContent = cookies;
+  //new line below
+  localStorage.setItem("cookies", cookies);
 });
 
 //upgrade the game
@@ -45,9 +37,11 @@ grandmaBtn.addEventListener("click", function () {
     cookies = cookies - 10;
     cookieDisplay.textContent = cookies;
     cpsDisplay.textContent = cps;
-    //TODO put in LS
     //localStorage.setItem("grandma-btn", grandmaBtn);
-    let grandmas = localStorage.getItem("grandmas") || 0;
+    localStorage.setItem("cookies", cookies);
+    localStorage.setItem("cps", cps);
+
+    //let grandmas = localStorage.getItem("grandmas") || 0;
   }
 });
 
