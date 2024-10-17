@@ -1,14 +1,57 @@
-// set up DOM Nodes
+//DOM Nodes - this part does jfkldsjfdklsajfdsl
 const cookieBtn = document.getElementById("cookie-btn");
 const cookieDisplay = document.getElementById("cookie-display");
-const grandmaBtn = document.getElementById("grandma-btn");
 const cpsDisplay = document.getElementById("cps-display");
+const grandmaBtn = document.getElementById("grandma-btn");
+const grandmaDisplay = document.getElementById("grandma-display");
 
-//from lesson demo
-const img = document.querySelector("image");
-const btn = document.querySelector("button");
+//Game State - this part drives the game
+//let cookies = 0;
+//TODO put in LS and transform into number
+let cookies = localStorage.getItem("cookies") || 0;
+cookies = Number(cookies);
+//localStorage.setItem("cookie-display", cookies);
 
-// get API
+//let cps = 0;
+//TODO put in LS and transform into number
+let cps = localStorage.getItem("cps") || 0;
+cps = Number(cps);
+//localStorage.setItem("cps-display", cps);
+
+//TODO put in LS and transform into number
+let grandmas = localStorage.getItem("grandmas") || 0;
+grandmas = Number(grandmas);
+cookieDisplay.textContent = cookieDisplay;
+
+//GAME LOGIC
+//every sec inc cookies by 1sec
+setInterval(function () {
+  cookies = cookies + cps;
+  cookieDisplay.textContent = cookies;
+  //TODO put in LS
+  localStorage.setItem("cookie-display", cookieDisplay);
+}, 1000);
+
+//get a cookie when user clicks the button
+cookieBtn.addEventListener("click", function () {
+  cookies = cookies + 1;
+  cookieDisplay.textContent = cookies;
+});
+
+//upgrade the game
+grandmaBtn.addEventListener("click", function () {
+  if (cookies >= 10) {
+    cps = cps + 1;
+    cookies = cookies - 10;
+    cookieDisplay.textContent = cookies;
+    cpsDisplay.textContent = cps;
+    //TODO put in LS
+    //localStorage.setItem("grandma-btn", grandmaBtn);
+    let grandmas = localStorage.getItem("grandmas") || 0;
+  }
+});
+
+// CONNECT WITH API
 async function upgradeAPI() {
   const response = await fetch(
     "https://cookie-upgrade-api.vercel.app/api/upgrades"
@@ -17,38 +60,6 @@ async function upgradeAPI() {
   const upgrades = await response.json();
   console.log(upgrades);
 }
-
 upgradeAPI();
-//btn.addEventListener("click", handleUpgrades);
 
-// get cookies
-let cookies = 0;
-let cps = 0;
-
-// GAME LOGIC:
-// - every second increase cookies by cps
-setInterval(function () {
-  cookies = cookies + cps;
-  cookieDisplay.textContent = cookies;
-}, 1000);
-// - update screen to show current nb cookies
-setInterval(function () {
-  cpsDisplay.textContent = cps;
-}, 100);
-
-// - get a cookie on button click
-cookieBtn.addEventListener("click", function () {
-  cookies = cookies + 1;
-  cookieDisplay.textContent = cookies;
-});
-
-// - buy upgrades to improve cookie cps
-grandmaBtn.addEventListener("click", function () {
-  // make sure they can afford the upgrade
-  if (cookies >= 10) {
-    cps = cps + 1;
-    cookies = cookies - 10;
-    cookieDisplay.textContent = cookies;
-    cpsDisplay.textContent = cps;
-  }
-});
+//Pull the data from the API
