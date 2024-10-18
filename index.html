@@ -7,15 +7,52 @@
     <link rel="stylesheet" href="style.css" />
     <script src="./app.js" defer></script>
   </head>
-  <h1>Cookie Clicker</h1>
-  <h4>instructions go here</h4>
-  <!--  -->
-  <button id="cookie-btn">Cookie</button>
-  <p>Cookies: <span id="cookie-display">0</span></p>
-  <!--  -->
-  <p>CPS: <span id="cps-display">0</span></p>
-  <!--  -->
-  <button id="grandma-btn">Buy a Grandma</button>
-  <!--  -->
-  <body></body>
-</html>
+  <body>
+  <h1>Lets Make Cookies!</h1>
+    <button id="cookie-btn">
+        <img src="assets/cookie.png" alt="Clickable Image" style="width: 100px; height: 100px;">
+    </button>
+  <section class="mainHeaders">
+      <p>Cookies: <span id="cookie-display">0</span></p>
+      <p>Cookies per second: <span id="cps-display">0</span></p>
+  </section>
+  <div class="mainBakery">
+      <div class="upgradeOptions">
+        <div>Upgrade</div>
+        <div>Cost</div>
+        <div>CPS Impact</div>
+        <div>Buy Now</div>
+        <div>Upgrade Total</div>
+      </div>
+      <div class="upgradeOptions">
+        <div>Grandma</div>
+        <div>£C 5</div>
+        <div>+1</div>
+        <button id="grandma-btn">
+          <img src="assets/grandma.png" alt="Clickable Image" style="width: 40px; height: 40px;">
+        </button>
+        <div id="grandma-display">0</div>
+      </div>
+        <div class="upgradeOptions">
+        <div>Cookie Farm</div>
+        <div>£C 50</div>
+        <div>+10</div>
+        <button id="farm-btn">
+          <img src="assets/tractor.png" alt="Clickable Image" style="width: 40px; height: 40px;">
+        </button>
+        <div id="farm-display">0</div>
+      </div>
+        <div class="upgradeOptions">
+        <div>Industrial Estate</div>
+        <div>£C 500</div>
+        <div>+100</div>
+        <button id="estate-btn">
+          <img src="assets/factory2.png" alt="Clickable Image" style="width: 40px; height: 40px;">
+        </button>
+        <div id="estate-display">0</div>
+      </div>
+    </div>
+  </div>
+  </body>
+  <button id="reset-btn">Reset Progress</button>
+  </html>

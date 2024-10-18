@@ -1,19 +1,77 @@
-/*remove border around the screen and set font for the page*/
 * {
   box-sizing: border-box;
-  background-color: rgb(116, 6, 6);
-  font-family: verdana;
-  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-/*#Item {
-  width: 100%;
-  min-height: 100px;
-  padding: 50px;
-  z-index: 999;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: fixed;
+body {
+  background-image: url(assets/green.jpg);
+  background-size: cover;
+  margin: 0;
+  height: 100vh;
+  width: 100wh;
+  position: absolute;
+  background-repeat: no-repeat;
+  color: rgb(7, 0, 0);
 }
-*/
+
+h1 {
+  margin-left: 150px;
+  font-size: 30px;
+}
+
+.mainHeaders {
+  margin-left: 150px;
+  margin-right: 100px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.upgradeOptions {
+  font-size: medium;
+  font-weight: bold;
+  color: black;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 10px;
+  border: 3px solid rgb(95, 59, 4);
+  background-color: rgb(226, 247, 142);
+  margin-left: 150px;
+  margin-right: 100px;
+  margin-top: 5px;
+  border-radius: 10px;
+}
+
+#cookie-btn {
+  margin-left: 150px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#grandma-btn {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#farm-btn {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#estate-btn {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+#reset-btn {
+  color: white;
+  background-color: rgb(83, 81, 81);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 150px;
+}
