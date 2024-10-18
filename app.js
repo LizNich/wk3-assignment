@@ -1,4 +1,4 @@
-//DOM Nodes
+// DOM Nodes
 const cookieBtn = document.getElementById("cookie-btn");
 const cookieDisplay = document.getElementById("cookie-display");
 const cpsDisplay = document.getElementById("cps-display");
@@ -8,10 +8,9 @@ const farmBtn = document.getElementById("farm-btn");
 const farmDisplay = document.getElementById("farm-display");
 const estateBtn = document.getElementById("estate-btn");
 const estateDisplay = document.getElementById("estate-display");
-//
 const resetBtn = document.getElementById("reset-btn");
 
-//Game State
+// Game State
 let cookies = localStorage.getItem("cookies") || 0;
 cookies = Number(cookies);
 let cps = localStorage.getItem("cps") || 0;
@@ -30,22 +29,22 @@ grandmaDisplay.textContent = grandma;
 farmDisplay.textContent = farm;
 estateDisplay.textContent = estate;
 
-//GAME LOGIC
-//every sec inc cookies by CPS
+// GAME LOGIC
+// every sec inc cookies by CPS
 setInterval(function () {
   cookies = cookies + cps;
   cookieDisplay.textContent = cookies;
   localStorage.setItem("cookies", cookies);
 }, 1000);
 
-//get a cookie when user clicks the button
+// get a cookie when user clicks the button
 cookieBtn.addEventListener("click", function () {
   cookies = cookies + 1;
   cookieDisplay.textContent = cookies;
   localStorage.setItem("cookies", cookies);
 });
 
-//upgrade the game
+// upgrade the game
 // 1-grandma
 grandmaBtn.addEventListener("click", function () {
   if (cookies >= 5) {

@@ -1,6 +1,3 @@
-// not active in main app.js
-// come back to later
-
 // CONNECT WITH API
 async function upgradeAPI() {
   const response = await fetch(
@@ -13,8 +10,3 @@ async function upgradeAPI() {
 upgradeAPI();
 
 //Pull the data from the API using an array
-//const items = [
-//{
-//  src: "assets/02-pink.jpg",
-// alt: "A peaceful pink japanese garden",
-//},
