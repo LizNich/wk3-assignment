@@ -47,9 +47,9 @@ cookieBtn.addEventListener("click", function () {
 // upgrade the game
 // 1-grandma
 grandmaBtn.addEventListener("click", function () {
-  if (cookies >= 5) {
+  if (cookies >= 10) {
     cps = cps + 1;
-    cookies = cookies - 5;
+    cookies = cookies - 10;
     grandma = grandma + 1;
     cookieDisplay.textContent = cookies;
     cpsDisplay.textContent = cps;
